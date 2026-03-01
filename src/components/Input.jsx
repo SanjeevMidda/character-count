@@ -2,17 +2,20 @@ import React, { useState } from "react";
 
 const Input = () => {
   const [userInput, setuserInput] = useState("");
-  const [numberOfCharacters, setNumberOfCharacters] = useState(0);
+
+  const updateInput = (e) => {
+    setuserInput(e.target.value);
+  };
 
   return (
     <div className="inputContainer">
       <input
         type="text"
         value={userInput}
-        onChange={characterLength}
+        onChange={updateInput}
         placeholder="enter text"
       />
-      <h3 id="numberCount"> {characterLength} characters entered</h3>
+      <h3 id="numberCount"> {userInput.length} characters entered</h3>
     </div>
   );
 };
