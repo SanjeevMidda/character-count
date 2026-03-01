@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Input = () => {
+  const [charactersEntered, setCharactersEntered] = useState(0);
+
   return (
     <div className="inputContainer">
       <input type="text" />
-      <h3 id="numberCount"> 12 characters entered</h3>
+      <h3 id="numberCount"> {charactersEntered} characters entered</h3>
     </div>
   );
 };
