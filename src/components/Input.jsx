@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const Input = () => {
+const Input = ({ inputLimit }) => {
   const [userInput, setUserInput] = useState("");
 
   const handleChange = ({ target }) => setUserInput(target.value);
 
   const numberOfCharactersEntered = () => {
-    if (userInput.length > 30) {
+    if (userInput.length > inputLimit) {
       return <p>Over limit!</p>;
     } else if (userInput.length === 0) {
       return <p>No characters entered</p>;
