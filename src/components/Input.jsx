@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Input = ({ inputLimit }) => {
+const Input = ({ inputLimit = 30 }) => {
   const [userInput, setUserInput] = useState("");
 
   const handleChange = ({ target }) => setUserInput(target.value);
@@ -11,7 +11,9 @@ const Input = ({ inputLimit }) => {
     } else if (userInput.length === 0) {
       return <p>No characters entered</p>;
     } else {
-      return <p>{`${userInput.length} characters entered`}</p>;
+      return (
+        <p aria-live="polite">{`${userInput.length} characters entered`}</p>
+      );
     }
   };
 
