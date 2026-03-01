@@ -5,6 +5,16 @@ const Input = () => {
 
   const handleChange = ({ target }) => setUserInput(target.value);
 
+  const numberOfCharactersEntered = () => {
+    if (userInput.length > 30) {
+      return <p>Over limit!</p>;
+    } else if (userInput.length === 0) {
+      return <p>No characters entered</p>;
+    } else {
+      return <p>{`${userInput.length} characters entered`}</p>;
+    }
+  };
+
   return (
     <div className="inputContainer">
       <input
@@ -16,11 +26,7 @@ const Input = () => {
         aria-label="Enter text"
       />
 
-      <p>
-        {userInput.length
-          ? `${userInput.length} characters entered`
-          : "No characters entered"}
-      </p>
+      {numberOfCharactersEntered()}
     </div>
   );
 };
