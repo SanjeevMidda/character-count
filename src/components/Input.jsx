@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
 const Input = () => {
-  const [userInput, setuserInput] = useState("");
+  const [userInput, setUserInput] = useState("");
 
-  const updateInput = (e) => {
-    setuserInput(e.target.value);
-  };
+  const updateInput = ({ target }) => setUserInput(target.value);
 
   return (
     <div className="inputContainer">
