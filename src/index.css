@@ -10,3 +10,19 @@
   align-items: center;
   height: 100dvh;
 }
+
+p {
+  transition: color, 400ms;
+}
+
+#noCharacters {
+  color: black;
+}
+
+#overLimit {
+  color: red;
+}
+
+#validCharacterLimit {
+  color: blue;
+}
