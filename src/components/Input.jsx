@@ -3,17 +3,24 @@ import React, { useState } from "react";
 const Input = () => {
   const [userInput, setUserInput] = useState("");
 
-  const updateInput = ({ target }) => setUserInput(target.value);
+  const handleChange = ({ target }) => setUserInput(target.value);
 
   return (
     <div className="inputContainer">
       <input
+        id="userInput"
         type="text"
         value={userInput}
-        onChange={updateInput}
-        placeholder="enter text"
+        onChange={handleChange}
+        placeholder="Enter text"
+        aria-label="Enter text"
       />
-      <h3 id="numberCount"> {userInput.length} characters entered</h3>
+
+      <p>
+        {userInput.length
+          ? `${userInput.length} characters entered`
+          : "No characters entered"}
+      </p>
     </div>
   );
 };
